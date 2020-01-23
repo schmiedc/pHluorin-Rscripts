@@ -1,4 +1,4 @@
-setwd("/home/schmiedc/Desktop/Projects/pHluorinPlugin_TS/pHluorinShiny/")
+setwd("/data1/FMP_Docs/Repositories/scripts_FMP/pHluorinShiny/")
 library(gridExtra)
 source("dataProcessing.R")
 source("saveData.R")
@@ -17,24 +17,25 @@ source("plotData.R")
 #
 #         BUGS:
 #        NOTES: 
-# DEPENDENCIES: reshape2: install.packages("reshape2")
+# DEPENDENCIES: ggplot2: install.packages("ggplot2")
+#               xlsx: install.packages("gxlsx")
+#               reshape2: install.packages("reshape2")
 #               plyr: install.packages("plyr")
+#               gridExtra: install.packages("gridExtra")
 #
 #      VERSION: 1.0.0
 #      CREATED: 2018-05-24
-#     REVISION: 2018-08-07
+#     REVISION: 2020-01-22
 #
 # ============================================================================
-# TestParams
-
 # where to get the files
-
-#       "/home/schmiedc/Desktop/Projects/pHluorinPlugin_TS/Output"
 indir = "/data1/FMP_Docs/Repositories/minimal-datasets_FMP/pHlorin_TS/TestOne/"
 
 # where to save the data
 outdir = "/data1/FMP_Docs/Repositories/minimal-datasets_FMP/pHlorin_TS/ROutput/"
 
+# ============================================================================
+# resultsname
 resultname = "Test"
 
 # Time resolution in seconds
@@ -87,4 +88,4 @@ plotMean(finalTable, "surf_norm", "- background and surface normalized", FALSE)
 plotMean(finalTable, "peak_norm", "- background, surface and peak normalized", FALSE)
 
 # ===========================================================================
-plot(finalTable$time, finalTable$peak_norm)
+
